@@ -11,11 +11,11 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/TIBCOSoftware/flogo-contrib/trigger/rest/cors"
 	"github.com/TIBCOSoftware/flogo-lib/core/data"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/julienschmidt/httprouter"
+	"github.com/ocbitnl/flogo-components/trigger/rest/cors"
 )
 
 const (
@@ -127,7 +127,7 @@ func newActionHandler(rt *RestTrigger, handler *trigger.Handler) httprouter.Hand
 	return func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 		log.Infof("Received request for id '%s'", rt.config.Id)
-		
+
 		// Customization: Dump request
 		requestDump, err := httputil.DumpRequest(r, true)
 		if err != nil {
