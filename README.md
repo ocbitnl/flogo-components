@@ -1,1 +1,1 @@
-# flogo-components
+# flogo-contrib
