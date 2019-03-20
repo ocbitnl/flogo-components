@@ -6,6 +6,7 @@ import (
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
+	"github.com/ocbitnl/flogo-components/activity/ping/util"
 )
 
 // log is the default package logger
@@ -45,14 +46,14 @@ func (a *ReplyActivity) Eval(ctx activity.Context) (done bool, err error) {
 
 		dataBytes := []byte(`{
 			"response":"success",
-			"mashlingCliRevision":"` + PingDataPntr.MashlingCliRev + `",
-			"MashlingCliLocalRev":"` + PingDataPntr.MashlingCliLocalRev + `",
-			"MashlingCliVersion":"` + PingDataPntr.MashlingCliVersion + `",
-			"SchemaVersion":"` + PingDataPntr.SchemaVersion + `",
-			"AppVersion":"` + PingDataPntr.AppVersion + `",
-			"FlogolibRev":"` + PingDataPntr.FlogolibRev + `",
-			"MashlingRev":"` + PingDataPntr.MashlingRev + `",
-			"AppDescrption":"` + PingDataPntr.AppDescrption + `"
+			"mashlingCliRevision":"` + util.PingDataPntr.MashlingCliRev + `",
+			"MashlingCliLocalRev":"` + util.PingDataPntr.MashlingCliLocalRev + `",
+			"MashlingCliVersion":"` + util.PingDataPntr.MashlingCliVersion + `",
+			"SchemaVersion":"` + util.PingDataPntr.SchemaVersion + `",
+			"AppVersion":"` + util.PingDataPntr.AppVersion + `",
+			"FlogolibRev":"` + util.PingDataPntr.FlogolibRev + `",
+			"MashlingRev":"` + util.PingDataPntr.MashlingRev + `",
+			"AppDescrption":"` + util.PingDataPntr.AppDescrption + `"
 			}`)
 
 		var replyJSON interface{}
@@ -73,19 +74,4 @@ func (a *ReplyActivity) Eval(ctx activity.Context) (done bool, err error) {
 	}
 
 	return true, nil
-}
-
-// Moved from /lib/util
-
-var PingDataPntr = &PingDataDet{}
-
-type PingDataDet struct {
-	MashlingCliRev      string
-	MashlingCliLocalRev string
-	MashlingCliVersion  string
-	SchemaVersion       string
-	AppVersion          string
-	FlogolibRev         string
-	MashlingRev         string
-	AppDescrption       string
 }
