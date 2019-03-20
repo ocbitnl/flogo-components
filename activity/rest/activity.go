@@ -20,7 +20,7 @@ import (
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
-	"github.com/TIBCOSoftware/mashling/lib/util"
+	"github.com/ocbitnl/flogo-components/activity/rest/util"
 
 	opentracing "github.com/opentracing/opentracing-go"
 	ctx "golang.org/x/net/context"
