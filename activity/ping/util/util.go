@@ -154,6 +154,19 @@ func ResolveEnvironmentProperties(settings map[string]interface{}) error {
 	return nil
 }
 
+var PingDataPntr = &PingDataDet{}
+
+type PingDataDet struct {
+	MashlingCliRev      string
+	MashlingCliLocalRev string
+	MashlingCliVersion  string
+	SchemaVersion       string
+	AppVersion          string
+	FlogolibRev         string
+	MashlingRev         string
+	AppDescrption       string
+}
+
 // ReplaceNth Replaces the nth occurrence of old in s by new.
 func ReplaceNth(s, old, new string, n int) string {
 	i := 0
