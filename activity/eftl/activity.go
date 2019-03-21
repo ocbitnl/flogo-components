@@ -14,10 +14,10 @@ import (
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
-	"github.com/ocbitnl/flogo-components/activity/eftl/eftl"
+	"github.com/ocbitnl/flogo-components/lib/eftl"
 	"github.com/ocbitnl/flogo-components/lib/parse"
 
-	opentracing "github.com/opentracing/opentracing-go"
+	"github.com/opentracing/opentracing-go"
 	ctx "golang.org/x/net/context"
 )
 

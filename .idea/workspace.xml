@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56ab04ed-18dd-4710-8291-879c9584b736" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/conditions/jsonpath_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/parse/parse_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ping/ping.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity/eftl/activity.go" beforeDir="false" afterPath="$PROJECT_DIR$/activity/eftl/activity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/eftl/util/parse.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/eftl/eftl/conn.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/eftl/eftl/eftl.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/eftl/eftl/msg.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,34 +20,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trigger/eftl/trigger.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4560">
-              <caret line="322" column="43" lean-forward="true" selection-start-line="322" selection-start-column="43" selection-end-line="322" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="481" column="64" lean-forward="true" selection-start-line="481" selection-start-column="64" selection-end-line="481" selection-end-column="64" />
+            <state relative-caret-position="199">
+              <caret line="486" column="12" selection-start-line="486" selection-start-column="8" selection-end-line="486" selection-end-column="12" />
               <folding>
-                <element signature="e#186#882#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/eftl/conn.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="143" column="20" lean-forward="true" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-              <folding>
-                <element signature="e#261#373#0" expanded="true" />
+                <element signature="e#186#860#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,6 +70,8 @@
       <find>_</find>
       <find>GatewayTriggerSettingEnvSuffix</find>
       <find>JsonPathEval</find>
+      <find>cond</find>
+      <find>ctx</find>
     </findStrings>
     <replaceStrings>
       <replace>ping.</replace>
@@ -119,16 +99,13 @@
         <option value="$PROJECT_DIR$/lib/conditions/jsonpath.go" />
         <option value="$PROJECT_DIR$/lib/parse/parse.go" />
         <option value="$PROJECT_DIR$/lib/tracing/tracing_test.go" />
-        <option value="$PROJECT_DIR$/activity/eftl/activity.go" />
         <option value="$PROJECT_DIR$/activity/rest/activity.go" />
         <option value="$PROJECT_DIR$/trigger/eftl/consts.go" />
         <option value="$PROJECT_DIR$/trigger/gorillamuxtrigger/consts.go" />
         <option value="$PROJECT_DIR$/trigger/grpc/consts.go" />
-        <option value="$PROJECT_DIR$/trigger/grpc/trigger.go" />
         <option value="$PROJECT_DIR$/trigger/kafkasubrouter/consts.go" />
         <option value="$PROJECT_DIR$/trigger/kafkasubrouter/trigger.go" />
         <option value="$PROJECT_DIR$/trigger/mqtt/consts.go" />
-        <option value="$PROJECT_DIR$/trigger/mqtt/trigger.go" />
         <option value="$PROJECT_DIR$/lib/conditions/consts.go" />
         <option value="$PROJECT_DIR$/lib/conditions/util.go" />
         <option value="$PROJECT_DIR$/lib/conditions/operators.go" />
@@ -140,18 +117,19 @@
         <option value="$PROJECT_DIR$/lib/conditions/jsonpath_test.go" />
         <option value="$PROJECT_DIR$/lib/parse/parse_test.go" />
         <option value="$PROJECT_DIR$/lib/util/util_test.go" />
-        <option value="$PROJECT_DIR$/trigger/wssub/trigger.go" />
         <option value="$PROJECT_DIR$/trigger/eftl/trigger.go" />
-        <option value="$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.go" />
         <option value="$PROJECT_DIR$/lib/eftl/conn.go" />
+        <option value="$PROJECT_DIR$/activity/eftl/activity.go" />
+        <option value="$PROJECT_DIR$/trigger/wssub/trigger.go" />
+        <option value="$PROJECT_DIR$/trigger/mqtt/trigger.go" />
+        <option value="$PROJECT_DIR$/trigger/grpc/trigger.go" />
+        <option value="$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="36" />
-    <option name="y" value="23" />
-    <option name="width" value="1884" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -173,18 +151,30 @@
             <path>
               <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
               <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
               <item name="eftl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
               <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
               <item name="trigger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
+              <item name="trigger" type="462c0819:PsiDirectoryNode" />
+              <item name="gorillamuxtrigger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flogo-components" type="462c0819:PsiDirectoryNode" />
+              <item name="trigger" type="462c0819:PsiDirectoryNode" />
+              <item name="kafkasubrouter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flogo-components" type="b2602c69:ProjectViewProjectNode" />
@@ -199,6 +189,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
@@ -301,19 +292,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="36" y="23" width="1884" height="1057" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972856" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24494143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5005429" side_tool="true" visible="true" weight="0.32908705" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5005325" side_tool="true" visible="true" weight="0.31408307" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945712" visible="true" weight="0.32908705" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946752" visible="true" weight="0.31408307" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6362649" weight="0.32908705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -329,10 +320,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trigger/eftl/conditions/oper_in.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trigger/eftl/conditions/oper_lessthan.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -437,16 +429,6 @@
     <entry file="file://$PROJECT_DIR$/lib/conditions/oper_equals.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity/eftl/activity.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="e#174#533#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/activity/lambda/activity.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -493,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/grpc/trigger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trigger/grpc/consts.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -511,23 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/kafkasubrouter/trigger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5942">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/mqtt/trigger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3602">
-          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
-          <folding>
-            <element signature="e#14#506#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,16 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/wssub/trigger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="78" column="4" lean-forward="true" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
-          <folding>
-            <element signature="e#174#430#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/conditions/jsonpath.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -664,26 +612,79 @@
     <entry file="file://$PROJECT_DIR$/trigger/eftl/trigger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4560">
-          <caret line="322" column="43" lean-forward="true" selection-start-line="322" selection-start-column="43" selection-end-line="322" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="481" column="64" lean-forward="true" selection-start-line="481" selection-start-column="64" selection-end-line="481" selection-end-column="64" />
-          <folding>
-            <element signature="e#186#882#0" expanded="true" />
-          </folding>
+          <caret line="322" column="43" selection-start-line="322" selection-start-column="43" selection-end-line="322" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/eftl/conn.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="143" column="20" lean-forward="true" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
+        <state relative-caret-position="269">
+          <caret line="151" column="24" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
           <folding>
             <element signature="e#261#373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity/eftl/activity.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+          <folding>
+            <element signature="e#174#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/wssub/trigger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+          <folding>
+            <element signature="e#174#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/kafkasubrouter/trigger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5775">
+          <caret line="385" column="42" selection-start-line="385" selection-start-column="42" selection-end-line="385" selection-end-column="42" />
+          <folding>
+            <element signature="e#183#584#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/mqtt/trigger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+          <folding>
+            <element signature="e#14#513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/grpc/trigger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="265" column="28" selection-start-line="265" selection-start-column="28" selection-end-line="265" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/gorillamuxtrigger/trigger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="486" column="12" selection-start-line="486" selection-start-column="8" selection-end-line="486" selection-end-column="12" />
+          <folding>
+            <element signature="e#186#860#0" expanded="true" />
           </folding>
         </state>
       </provider>
