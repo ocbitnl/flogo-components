@@ -15,7 +15,7 @@ import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/ocbitnl/flogo-components/activity/eftl/eftl"
-	"github.com/ocbitnl/flogo-components/activity/eftl/util"
+	"github.com/ocbitnl/flogo-components/lib/parse"
 
 	opentracing "github.com/opentracing/opentracing-go"
 	ctx "golang.org/x/net/context"
@@ -117,7 +117,7 @@ func (a *Activity) Eval(context activity.Context) (done bool, err error) {
 	defer connection.Disconnect()
 
 	content := context.GetInput(ivContent)
-	data, err := util.Marshal(content)
+	data, err := parse.Marshal(content)
 	if err != nil {
 		logError("failed to marshal: %s", err)
 		return false, err
