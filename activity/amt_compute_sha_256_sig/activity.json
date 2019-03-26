@@ -6,7 +6,7 @@
   "description": "Computes SHA 256 Sig (base64) from given key and secret",
   "ref": "github.com/ocbitnl/flogo-components/activity/amt_compute_sha_256_sig",
   "author": "Your Name <you.name@example.org>",
-  "inputs":[
+  "inputs": [
     {
       "name": "key",
       "type": "string"
