@@ -1,0 +1,24 @@
+{
+  "name": "amt_compute_sha_256_sig",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "activity description",
+  "ref": "github.com/ocbitnl/flogo-components/activity/amt_compute_sha_256_sig",
+  "author": "Your Name <you.name@example.org>",
+  "inputs":[
+    {
+      "name": "apiKey",
+      "type": "string"
+    },
+    {
+      "name": "secret",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "xSignature",
+      "type": "string"
+    }
+  ]
+}
