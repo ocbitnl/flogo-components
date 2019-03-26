@@ -3,6 +3,7 @@ package amt_compute_sha_256_sig
 import (
 	"crypto/sha256"
 	"encoding/base64"
+	"encoding/hex"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"strconv"
@@ -13,10 +14,11 @@ import (
 var log = logger.GetLogger("amt_compute_sha_256_sig")
 
 const (
-	ivApiKey = "apiKey"
+	ivKey = "key"
 	ivSecret = "secret"
 
-	ovXSignature = "xSignature"
+	ovHex = "hex"
+	ovBase64 = "base64"
 )
 
 // Sha256Activity is a stub for your Activity implementation
@@ -37,17 +39,21 @@ func (a *Sha256Activity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *Sha256Activity) Eval(context activity.Context) (done bool, err error) {
 
-	apiKey := context.GetInput(ivApiKey).(string)
+	key := context.GetInput(ivKey).(string)
 	secret := context.GetInput(ivSecret).(string)
 
-	s := apiKey + secret + strconv.FormatInt(time.Now().Unix(), 10)
+	s := key + secret + strconv.FormatInt(time.Now().Unix(), 10)
 	hash := sha256.New()
 	hash.Write([]byte(s))
 
-	xSignature := base64.URLEncoding.EncodeToString(hash.Sum(nil))
-	log.Debugf("x-signature = %s", xSignature)
+	hex := hex.EncodeToString(hash.Sum(nil))
+	log.Debugf("x-signature = %s", hex)
 
-	context.SetOutput(ovXSignature, xSignature)
+	base64 := base64.URLEncoding.EncodeToString(hash.Sum(nil))
+	log.Debugf("x-signature = %s", base64)
+
+	context.SetOutput(ovHex, hex)
+	context.SetOutput(ovBase64, base64)
 
 	return true, nil
 }
